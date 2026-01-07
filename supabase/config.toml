@@ -1,0 +1,10 @@
+project_id = "dosiahalaquxauzccwjl"
+
+[functions.generate-questions]
+verify_jwt = false
+
+[functions.generate-feedback]
+verify_jwt = false
+
+[functions.generate-coaching]
+verify_jwt = false

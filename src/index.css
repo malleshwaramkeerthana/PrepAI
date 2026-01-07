@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Off-black with brown tones - warm, editorial aesthetic */
+    --background: 15 8% 14%;
+    --foreground: 40 25% 92%;
+
+    --card: 15 10% 18%;
+    --card-foreground: 40 25% 92%;
+
+    --popover: 15 10% 16%;
+    --popover-foreground: 40 25% 92%;
+
+    /* Warm orange accent */
+    --primary: 28 85% 55%;
+    --primary-foreground: 15 8% 10%;
+
+    /* Cream/beige secondary */
+    --secondary: 35 30% 25%;
+    --secondary-foreground: 40 25% 92%;
+
+    --muted: 15 10% 22%;
+    --muted-foreground: 35 15% 60%;
+
+    /* Warm accent */
+    --accent: 35 70% 45%;
+    --accent-foreground: 15 8% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 25% 92%;
+
+    --border: 20 10% 25%;
+    --input: 20 10% 22%;
+    --ring: 28 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --cream: 40 35% 90%;
+    --cream-muted: 35 20% 75%;
+    --warm-orange: 28 85% 55%;
+    --warm-orange-light: 28 90% 65%;
+    --warm-orange-dark: 28 80% 45%;
+    --soft-brown: 20 20% 35%;
+    --deep-brown: 15 12% 12%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(28 85% 55%), hsl(35 70% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(15 8% 14%), hsl(15 12% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(15 10% 20%), hsl(15 10% 16%));
+
+    /* Shadows */
+    --shadow-warm: 0 10px 40px -10px hsl(28 85% 55% / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(28 85% 55% / 0.3);
+
+    --sidebar-background: 15 10% 16%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 28 85% 55%;
+    --sidebar-primary-foreground: 15 8% 10%;
+    --sidebar-accent: 15 10% 22%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 20 10% 25%;
+    --sidebar-ring: 28 85% 55%;
+  }
+
+  .dark {
+    /* Same as root - dark theme by default */
+    --background: 15 8% 14%;
+    --foreground: 40 25% 92%;
+    --card: 15 10% 18%;
+    --card-foreground: 40 25% 92%;
+    --popover: 15 10% 16%;
+    --popover-foreground: 40 25% 92%;
+    --primary: 28 85% 55%;
+    --primary-foreground: 15 8% 10%;
+    --secondary: 35 30% 25%;
+    --secondary-foreground: 40 25% 92%;
+    --muted: 15 10% 22%;
+    --muted-foreground: 35 15% 60%;
+    --accent: 35 70% 45%;
+    --accent-foreground: 15 8% 10%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 25% 92%;
+    --border: 20 10% 25%;
+    --input: 20 10% 22%;
+    --ring: 28 85% 55%;
+    --sidebar-background: 15 10% 16%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 28 85% 55%;
+    --sidebar-primary-foreground: 15 8% 10%;
+    --sidebar-accent: 15 10% 22%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 20 10% 25%;
+    --sidebar-ring: 28 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-warm);
+  }
+
+  .bg-gradient-warm {
+    background-image: var(--gradient-warm);
+  }
+
+  .bg-gradient-dark {
+    background-image: var(--gradient-dark);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
